@@ -8,8 +8,6 @@ public class DriverFactory {
 	
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-   public class DriverFactory {
-
     public static WebDriver initDriver() {
 
         ChromeOptions options = new ChromeOptions();
