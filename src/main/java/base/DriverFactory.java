@@ -5,26 +5,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverFactory {
-	
-	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    private static WebDriver driver;   
 
     public static WebDriver initDriver() {
 
         ChromeOptions options = new ChromeOptions();
+
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920,1080");
 
-        return new ChromeDriver(options);  
+        driver = new ChromeDriver(options);  
+        return driver;
     }
+
     public static WebDriver getDriver() {
-        return driver.get();
+        return driver;  
     }
 
     public static void quitDriver() {
-        getDriver().quit();
-        driver.remove();
+        if (driver != null) {   
+            driver.quit();
+            driver = null;
+        }
     }
-
 }
