@@ -56,8 +56,8 @@ public class E2ETest extends BaseTest {
         System.out.println("Confirmation message: '" + message + "'");
 
         //Expected failure to test Retry
-        Assert.assertTrue(
-            overview.getConfirmation().contains("TTHANK YOU"),
+        Assert.assertFalse(
+            overview.getConfirmation().contains("THANK YOU"),
             "Order not successful"
         );
     }
