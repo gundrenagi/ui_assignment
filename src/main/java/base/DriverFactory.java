@@ -18,8 +18,6 @@ public class DriverFactory {
 
         return new ChromeDriver(options);  
     }
-}
-
     public static WebDriver getDriver() {
         return driver.get();
     }
