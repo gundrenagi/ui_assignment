@@ -51,7 +51,7 @@ public class E2ETest extends BaseTest {
         OverviewPage overview = new OverviewPage(driver);
         overview.finishOrder();
         
-        Thread.sleep(30);
+        Thread.sleep(10);
         String message = overview.getConfirmation();
         System.out.println("Confirmation message: '" + message + "'");
 
